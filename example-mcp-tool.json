@@ -1,0 +1,41 @@
+{
+  "schema_version": "v1",
+  "name": "example_mcp_tool",
+  "description": "An example MCP tool configuration",
+  "tools": [
+    {
+      "name": "get_current_time",
+      "description": "Get the current time in a specified timezone",
+      "parameters": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "timezone": {
+            "type": "string",
+            "description": "The timezone to get the current time in (e.g., 'America/New_York', 'Europe/London')"
+          }
+        },
+        "required": ["timezone"]
+      }
+    },
+    {
+      "name": "search_data",
+      "description": "Search for data in a database",
+      "parameters": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The search query"
+          },
+          "limit": {
+            "type": "number",
+            "description": "Maximum number of results to return"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
