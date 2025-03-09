@@ -1,0 +1,92 @@
+{
+  "schema_version": "v1",
+  "name": "media_organizer",
+  "description": "A tool for organizing media files on a TrueNAS network share",
+  "tools": [
+    {
+      "name": "organize_all_media",
+      "description": "Organize all media files in the source directory",
+      "parameters": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "organize_file",
+      "description": "Organize a single media file",
+      "parameters": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "description": "Path to the file to organize"
+          }
+        },
+        "required": ["file_path"]
+      }
+    },
+    {
+      "name": "organize_tv_directory",
+      "description": "Organize TV shows in a directory",
+      "parameters": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "directory_path": {
+            "type": "string",
+            "description": "Path to the directory containing TV shows"
+          }
+        },
+        "required": ["directory_path"]
+      }
+    },
+    {
+      "name": "organize_movie_directory",
+      "description": "Organize movies in a directory",
+      "parameters": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "directory_path": {
+            "type": "string",
+            "description": "Path to the directory containing movies"
+          }
+        },
+        "required": ["directory_path"]
+      }
+    },
+    {
+      "name": "update_config",
+      "description": "Update the media organizer configuration",
+      "parameters": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "source_dir": {
+            "type": "string",
+            "description": "Source directory for media files"
+          },
+          "tv_destination": {
+            "type": "string",
+            "description": "Destination directory for TV shows"
+          },
+          "movie_destination": {
+            "type": "string",
+            "description": "Destination directory for movies"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_config",
+      "description": "Get the current media organizer configuration",
+      "parameters": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ]
+}
